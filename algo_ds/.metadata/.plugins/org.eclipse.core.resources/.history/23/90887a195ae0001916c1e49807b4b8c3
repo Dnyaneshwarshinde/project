@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+#include<iomanip>
+
+int comparisons=0;
+
+bool linear_search(int arr[],int key)
+{
+	comparisons=0;
+
+	for(int index=0;index<size;index++)
+	{
+		comparisons++;
+		if(arr[index]==key)
+		{
+			return true;
+		}
+
+	}
+
+	return false;
+
+}
+
+void accept_array_ele(int arr[])
+{
+	cout<<"\n Enter the array elements=";
+	for(int index=0;index<size;index++)
+	{
+		cin>>arr[index];
+	}
+}
+
+
+
+
+
+int main() {
+
+
+	return 0;
+}
