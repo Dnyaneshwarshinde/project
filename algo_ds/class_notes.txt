@@ -1,0 +1,236 @@
+Course Name		: PG-DAC
+Module Name		: Algorithms and Data Structures
+Total Marks		: 100 Marks
+Theory Exam		: 40 Marks -- CPT-1
+Lab Exam		: 40 Marks
+Internal Exam	: 20 Marks : Rapid sheet completion, attendance,
+					internal test
+Total Hrs		: 70 Hrs = 34 hrs Lecture + 36 hrs of Lab.
+-------------------------------------------------------------------------
+- "data base" is way to store data into the secondary memory in an oraganized manner (i.e. in the form of well defined/structured tables).
+
+Q. what is data structure?
+- it is a way to store data into the memory i.e. into the main memory
+in an organized manner so that operations (like addition, deletion, searching, sorting, traversal etc...) can be performed on it efficiently.
+ 
+Q. why there is a need of data structure?
+- there is a need of data structure in programming to achieve following things:
+	1. efficiency
+	2. abstraction
+	3. reusability
+	
+- there are two types of data structure:
+	1. linear data structure/basic data structures:
+		- array
+		- structure & union
+		- class
+		- linked list
+		- stack
+		- queue
+		 
+	2. non-linear data structure/advanced data structure
+		- tree
+		- graph
+		- hash table
+		- binary heap
+		etc....
+
+
+
++ array: it is a collection of logically related similar type of elements
+in which data ele's gets stored into the memory at contoguos memory
+locations.
+
++ structure: it is a collection of logically related similar and disimilar type of elements which gets stored into the memory collectively.
+--------------------------------------------------------------- 
++ what is an algorithm?
+- it is a set of finite no. of instructions, if followed, acomplishesh
+given task.
+- it is a set of finite no. of instructions in human understandable language like an english with some programming contstraints, if followed
+the given task can be completed -- such kind of algo is also reffered
+as "pseudocode".
+e.g. 
+	
+	Algorithm ArraySum(A, n)//A is an array of size "n"
+	{
+		sum=0
+		for( index = 1 ; index <= n ; index++ )
+			sum += A[index];
+		
+		return sum;
+	}
+
+- an algorithm is a solution for a given problem.
+- an algorithm = solution
+- problem: sorting - it is a process to arrange data ele's in a collection/list (i.e. either an array or linked list) of ele's either
+in an ascending order or in a descending order.
+- there are different sorting algo's are available i.e. to solve a problem of sorting many solutions are available.
+	e.g. 	- selection sort
+			- bubble sort
+			- insertion sort
+			- quick sort
+			- merge sort
+			- heap sort
+			- radix sort
+			- shell sort
+			- bucket sort
+			etc...
+			
+- when we have many solutions for a given single problem, we need to select an efficient one (for implementation), and to decide an efficiency of algorithms we need to do their analysis.
+- analysis of an algorithm is a work of determining how much "time" i.e. computer time and "space" i.e. computer memory/computer space it needs to run to completion.
+- there are two measures of an analysis of an algoithm:
+	1. time complexity -- of an algo is the amount of computer time it
+	needs to run to completion.
+	
+	2. space complexity -- of an algo is the amount of computer space
+	memory it needs to run to completion.
+	
+- there are two types of an algo/there are two approaches to write an
+algorithm:
+1. iterative approach:
+e.g.
+	Algorithm ArraySum(A, n)//A is an array of size "n"
+	{
+		sum=0
+		for( index = 1 ; index <= n ; index++ )
+			sum += A[index];
+		
+		return sum;
+	}
+
+	- initialization
+	- termination condition
+	- modification
+	
+2. recursive approach:
+e.g.	
+	Algorithm RArraySum(A, n, index)
+	{
+		//base condition
+		if( index > n )
+			return 0;
+		return ( A[index] + RArraySum(A, n, index+1))
+	}
+	
+	int main(void)
+	{
+		RArray(arr, SIZE, 1);//initialization
+	}
+
+	- initialization: we need to take care at the time first time
+	function calling to the rec function. 
+	- base condition: we need to take care at the begining of rec
+	function definition 
+	- modification: we need to take care at the time rec function calling
+
+Q. what is recursion?
+- it is a process/concept in which we can call any function from inside
+that function itself, such a function is reffered as "recursive function" and function call is reffered as recursive function call
+- 
+e.g. 
+	void fun(int n)
+	{
+		if( n == 5 )
+			return;
+		printf("%4d", n);
+		fun(--n);//recursive function call
+	}
+	
+- there are two types of recursive functions:
+1. tail recursive: recursive function in which recursive function call
+is the last executable statement.
+	void fun(int n)
+	{
+		//base condition
+		if( n == 0 )
+			return;
+		printf("%4d", n);
+		fun(--n);//recursive function call is the last executable
+		statement
+	}
+	
+	int main(void)
+	{
+		fun(5);//first time calling to the rec function call
+		return 0;
+	}
+
+2. non-tail recursive: recursive function in which recursive function call is the last executable statement.
+e.g.
+	void fun(int n)
+	{
+		if( n == 5 )
+			return;
+			
+		fun(--n);//recursive function call
+		printf("%4d", n);
+		//statement/s
+	}
+=========================================================================	
++ space complexity = code space (i.e. space required for an instructions) + data space (i.e. space required for simple vars, constants and instance vars) + stack space (applicable in only recursive algo's).
+
+e.g.
+	Algorithm ArraySum(A, n)//A is an array of size "n"
+	{
+		sum=0
+		for( index = 1 ; index <= n ; index++ )
+			sum += A[index];
+		
+		return sum;
+	}
+
+
+- space complexity has two components:
+1. fixed component: code space, space required for simple vars and constants.
+2. variable component: space required instance vars and stack space(in
+only recursive algo).
+-------------------------------------------------------------------------- 
+- time complexity = compilation time + execution time
+1. fixed component: compilation time
+2. variable component: execution time
+
+- as an execution time of a program (an algo) is not only depends on
+input size, it also depends on hardware conf as well as on some external factors in which program is in execution, and hence we cannot calculate
+time complexity of any program/algo exactly by this using method, and hence we can use "asymptotic analysis" method to calculate time and space
+complexity.
+- "asymptotic analysis" - it is a mathematical way to calculate time and
+space complexity of an algo without implementing it in any programming language.
+
+	Algorithm LienarSearch(A, n, key )
+	{
+		for( index = 1 ; index <= n ; index++ )
+		{
+			if( A[index] == key )
+				return true;
+		}
+		
+		return false;
+	}
+
+
+========================================================================
++ assumptions:
+	- if running time of an algo is having any additive or substractive
+	constant then it can be neglected.
+	e.g. O(n+3) OR O(n-5) ==> O(n)
+	
+	- if running time of an algo is having any multiplicative or
+	divisive constant then it can be neglected.
+	e.g. O(3n) OR O(n/5) ==> O(n)
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
